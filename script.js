@@ -12,7 +12,7 @@
 
 
 
-$(document).ready(function () {
+$(document).ready(function(){
   
   
 
@@ -48,16 +48,17 @@ $(document).ready(function () {
   // current hour in 24-hour time?
   //
   function timeUpdate(){
-    var currentHour = dayjs().hour()
+    var currentTime = dayjs().hour()
 
     $('.time-block').each(function(){
-      var blockHour = parseInt($(this).attr('id').split('r'[1]))
-      if(currentHour > blockHour){
-        $(this).removeClass("future")
-        $(this).removeClass("present")
+      var blockHour = parseInt($(this).attr('id').split('r')[1])
+      
+      if(currentTime > blockHour){
+        $(this).removeClass('future')
+        $(this).removeClass('present')
         $(this).addClass('past')
       }
-      else if(currentHour === blockHour){
+      else if(currentTime === blockHour){
         $(this).removeClass('past')
         $(this).removeClass('future')
         $(this).addClass('present')
@@ -86,11 +87,11 @@ $(document).ready(function () {
    $('#hour-10 .description').val(localStorage.getItem('hour-10'))
    $('#hour-11 .description').val(localStorage.getItem('hour-11'))
    $('#hour-12 .description').val(localStorage.getItem('hour-12'))
-   $('#hour-1 .description').val(localStorage.getItem('hour-1'))
-   $('#hour-2 .description').val(localStorage.getItem('hour-2'))
-   $('#hour-3 .description').val(localStorage.getItem('hour-3'))
-   $('#hour-4 .description').val(localStorage.getItem('hour-4'))
-   $('#hour-5 .description').val(localStorage.getItem('hour-5'))
+   $('#hour-13 .description').val(localStorage.getItem('hour-13'))
+   $('#hour-14 .description').val(localStorage.getItem('hour-14'))
+   $('#hour-15 .description').val(localStorage.getItem('hour-15'))
+   $('#hour-16 .description').val(localStorage.getItem('hour-16'))
+   $('#hour-17 .description').val(localStorage.getItem('hour-17'))
 
 
   // TODO: Add code to display the current date in the header of the page.
